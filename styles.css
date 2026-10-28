@@ -32,7 +32,7 @@
     width: 100%;
     height: auto;
     min-height: 0;
-    padding: 45px 0 35px;
+    padding: 20px 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,13 +40,12 @@
   }
 
   /* LIBRO: ancho completo y mucha más altura */
-  .book {
-    --w: 96vw;
-    width: var(--w);
-    height: clamp(440px, 135vw, 650px);
-    flex-shrink: 0;
-  }
-
+.book {
+  --w: 96vw;
+  width: var(--w);
+  height: clamp(340px, 92vw, 460px);
+  flex-shrink: 0;
+}
   /* Páginas interiores */
   .paper {
     overflow: hidden;
@@ -229,7 +228,7 @@
 @media (max-width: 380px) {
   .book {
     --w: 98vw;
-    height: 510px;
+    height: 360px;
   }
 
   .pagecontent {

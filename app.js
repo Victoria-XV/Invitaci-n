@@ -81,7 +81,7 @@ musicButton.onclick=()=>{
 };
 updateMusicButton();
 // La narración arranca al abrir el libro y al completar cada cambio de páginas.
-```javascript
+
 // NARRACIÓN CORREGIDA — VICTORIA CAMBRONERO
 
 const narrationFiles = cfg.narrationFiles || [

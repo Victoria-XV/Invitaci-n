@@ -81,41 +81,148 @@ musicButton.onclick=()=>{
 };
 updateMusicButton();
 // La narración arranca al abrir el libro y al completar cada cambio de páginas.
-const narrationFiles=cfg.narrationFiles||[
- 'assets/narracion-01.mp3','assets/narracion-02.mp3',
- 'assets/narracion-03.mp3','assets/narracion-04.mp3'
+```javascript
+// NARRACIÓN CORREGIDA — VICTORIA CAMBRONERO
+
+const narrationFiles = cfg.narrationFiles || [
+  'assets/narracion-01.mp3?v=3',
+  'assets/narracion-02.mp3?v=3',
+  'assets/narracion-03.mp3?v=3',
+  'assets/narracion-04.mp3?v=3'
 ];
-const voice=new Audio();voice.preload='auto';voice.volume=1;
-let narrationSpread=-1;
-let narrationEnabled=true;
-const voiceButton=$('voice');
-function updateVoiceButton(){
- voiceButton.textContent=narrationEnabled?'Ⅱ Silenciar narrador':'♬ Activar narrador';
- voiceButton.setAttribute('aria-pressed',String(narrationEnabled));
+
+const voice = new Audio();
+voice.preload = 'auto';
+voice.volume = 1;
+
+let narrationSpread = -1;
+let narrationEnabled = true;
+let narrationError = false;
+let narrationRequest = 0;
+
+const voiceButton = $('voice');
+
+function updateVoiceButton() {
+  if (!narrationEnabled) {
+    voiceButton.textContent = '♬ Activar narrador';
+  } else if (narrationError) {
+    voiceButton.textContent = '▶ Reproducir narración';
+  } else {
+    voiceButton.textContent = 'Ⅱ Silenciar narrador';
+  }
+
+  voiceButton.setAttribute(
+    'aria-pressed',
+    String(narrationEnabled)
+  );
 }
-function stopNarration(){
- voice.pause();voice.currentTime=0;narrationSpread=-1;
- music.volume=.22;
+
+function stopNarration() {
+  narrationRequest++;
+
+  voice.pause();
+  voice.removeAttribute('src');
+  voice.load();
+
+  narrationSpread = -1;
+  narrationError = false;
+
+  music.volume = .22;
+  updateVoiceButton();
 }
-async function startNarrationForCurrentPage(){
- if(!narrationEnabled||locked||spread<0)return;
- const path=narrationFiles[spread];
- if(!path)return;
- if(narrationSpread!==spread){
-  voice.pause();voice.src=path;narrationSpread=spread;voice.load();
- }
- try{await voice.play();music.volume=.09}
- catch(e){music.volume=.22;/* Puede faltar el MP3 o estar bloqueado. */}
+
+async function startNarrationForCurrentPage() {
+  if (!narrationEnabled || locked || spread < 0) return;
+
+  const currentSpread = spread;
+  const path = narrationFiles[currentSpread];
+
+  if (!path) {
+    console.error('No existe una ruta de narración para esta página.');
+    return;
+  }
+
+  const request = ++narrationRequest;
+
+  if (narrationSpread !== currentSpread || narrationError) {
+    voice.pause();
+    voice.src = path;
+    voice.load();
+
+    narrationSpread = currentSpread;
+  }
+
+  narrationError = false;
+  updateVoiceButton();
+
+  try {
+    await voice.play();
+
+    if (request !== narrationRequest) return;
+
+    music.volume = .09;
+
+    console.log(
+      'Narración reproduciéndose:',
+      currentSpread + 1,
+      path
+    );
+
+  } catch (error) {
+    if (request !== narrationRequest) return;
+
+    narrationError = true;
+    music.volume = .22;
+
+    console.error(
+      'Error al reproducir narración:',
+      path,
+      error
+    );
+
+    updateVoiceButton();
+  }
 }
-voiceButton.onclick=()=>{
- narrationEnabled=!narrationEnabled;
- if(narrationEnabled)startNarrationForCurrentPage();else stopNarration();
- updateVoiceButton();
+
+voiceButton.onclick = () => {
+  if (narrationError && narrationEnabled) {
+    startNarrationForCurrentPage();
+    return;
+  }
+
+  narrationEnabled = !narrationEnabled;
+
+  if (narrationEnabled) {
+    startNarrationForCurrentPage();
+  } else {
+    stopNarration();
+  }
+
+  updateVoiceButton();
 };
-voice.onended=()=>{music.volume=.22};
-voice.addEventListener('pause',()=>{music.volume=.22});
-voice.addEventListener('play',()=>{music.volume=.09});
+
+voice.onended = () => {
+  music.volume = .22;
+};
+
+voice.addEventListener('pause', () => {
+  music.volume = .22;
+});
+
+voice.addEventListener('play', () => {
+  music.volume = .09;
+});
+
+voice.addEventListener('error', () => {
+  console.error(
+    'Error cargando el audio:',
+    voice.currentSrc,
+    voice.error
+  );
+});
+
 updateVoiceButton();
+```
 // El primer clic/tap puede habilitar la música incluso si no fue en «Abrir libro».
 document.addEventListener('pointerdown',()=>{startMusic()}, {once:true,capture:true});
 document.addEventListener('keydown',()=>{startMusic()}, {once:true,capture:true});

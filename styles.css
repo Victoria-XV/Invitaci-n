@@ -1,7 +1,251 @@
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:'Cormorant Garamond',Georgia,serif;color:#fff0cf}body{background:#251a30;overflow-x:hidden}.scene{position:fixed;inset:0;background:url('jardin-nuevo.webp') center/cover no-repeat;z-index:-2}.veil{position:fixed;inset:0;background:linear-gradient(#130c2059,#130c2020 50%,#130c2059);z-index:-1}header{text-align:center;padding:12px 8px 0;text-shadow:0 2px 7px #110d18}header span{font:10px Cinzel,serif;letter-spacing:2px}header h1{font:500 clamp(20px,3vw,36px) Cinzel,serif;margin:2px 0}header p{margin:0;font-size:16px}main{display:flex;flex-direction:column;align-items:center}.stage{width:100%;height:min(70vh,680px);min-height:340px;display:grid;place-items:center;perspective:1800px;touch-action:pan-y}.book{--w:min(980px,86vw,calc((70vh - 45px)*1.76));position:relative;width:var(--w);height:calc(var(--w)*.57);transform-style:preserve-3d;filter:drop-shadow(0 21px 16px #100c17aa);transition:transform 1.35s cubic-bezier(.2,.7,.25,1);transform:rotateX(5deg)}.binding{position:absolute;inset:-12px;border:3px solid #b99052;border-radius:16px;background:linear-gradient(90deg,#11213b,#29416a 47%,#07162e 50%,#30466d 53%,#10213b);box-shadow:0 7px 0 #10182b,0 11px 0 #a87b43,0 16px 16px #110d18,inset 0 0 0 7px #122747,inset 0 0 0 9px #c59c58}.paper{position:absolute;top:1%;height:98%;width:49.4%;background:radial-gradient(ellipse at 55% 25%,#fff9e9,#f2e1be 82%,#e3c9a0);box-shadow:0 5px 0 #d5c098,0 9px 0 #aa8c5f;border:1px solid #c6a775;overflow:hidden}.paper.left{left:.7%;border-radius:9px 1px 1px 9px}.paper.right{right:.7%;border-radius:1px 9px 9px 1px}.pagecontent{height:100%;width:100%;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9% 8%;color:#253852}.pagecontent:before{content:'';position:absolute;inset:11px;border:1px solid #c6a36b;pointer-events:none}.pagecontent:after{content:'❧';position:absolute;bottom:4%;color:#b18b51;font-size:17px}.eyebrow{font:500 clamp(7px,.83vw,11px) Cinzel,serif;letter-spacing:1.5px;color:#967342}.flower{color:#ae8b54;font-size:25px}.pagecontent h2{font:500 clamp(19px,2.9vw,40px)/1.1 Cinzel,serif;margin:8px 0}.pagecontent h2.script{font:400 clamp(42px,6vw,76px) 'Great Vibes',cursive;color:#73476c}.pagecontent p{font-size:clamp(13px,1.75vw,23px);line-height:1.23;margin:8px 0;max-width:98%}.date{font:500 clamp(15px,2vw,26px) Cinzel,serif;margin:5px}.flip{position:absolute;left:50%;top:1%;height:98%;width:49.4%;transform-origin:0 50%;transform-style:preserve-3d;z-index:60;display:none;transition:transform 1.25s cubic-bezier(.42,.02,.18,1);pointer-events:none}.flip.moving{transform:rotateY(-180deg)}.flip.reverse{transform:rotateY(-180deg)}.flip.reverse.moving{transform:rotateY(0deg)}.flipfront,.flipback{position:absolute;inset:0;backface-visibility:hidden;background:radial-gradient(ellipse at 55% 25%,#fff9e9,#f2e1be 82%,#e3c9a0);box-shadow:inset 12px 0 22px #62492325;border:1px solid #c6a775}.flipback{transform:rotateY(180deg)}.cover{position:absolute;left:50%;top:-13px;width:51%;height:calc(100% + 26px);transform-origin:0 50%;transform-style:preserve-3d;z-index:100;transition:transform 2.25s cubic-bezier(.4,.03,.14,1)}.cover.open{transform:rotateY(-180deg)}.coverfront,.coverback{position:absolute;inset:0;backface-visibility:hidden;border:3px solid #d0a55f;border-radius:3px 13px 13px 3px;background:linear-gradient(125deg,#11223c,#2a446c 33%,#10203c 70%,#09182e);box-shadow:inset 0 0 0 6px #142a49,inset 0 0 0 9px #bd9658,4px 6px 12px #100b18a0}.coverback{transform:rotateY(180deg);border-radius:13px 3px 3px 13px;background:linear-gradient(120deg,#0c1931,#253e61,#10213b)}.rim{position:absolute;inset:21px;border:double 6px #d0a85f;box-shadow:inset 0 0 0 8px #142a49,inset 0 0 0 9px #c09a57;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:11px;padding:12px;color:#f2d69a}.rim span,.rim b,.rim small{font:500 clamp(8px,1vw,13px) Cinzel,serif;letter-spacing:1.3px}.rim strong{font:400 clamp(52px,7vw,102px) 'Great Vibes',cursive}.rim>div{font-size:clamp(21px,3vw,35px)}.spine{position:absolute;top:-10px;bottom:-10px;left:49.4%;width:1.2%;background:linear-gradient(90deg,#0b1b32,#c49a57 45%,#172a45);border-radius:5px;z-index:4;pointer-events:none}.book.closed{transform:translateX(-25%) rotateX(5deg)}.book.closed .binding{clip-path:inset(0 0 0 50%)}.book.closed .paper,.book.closed .spine{visibility:hidden}.book.closed .cover{transform:rotateY(0);z-index:100}.book.opening .cover{z-index:100}.book.opened .cover{z-index:2}.book.opened .paper{z-index:10}.book.opened .flip{z-index:30}nav{display:flex;justify-content:center;align-items:center;gap:24px;z-index:120;position:relative}button{cursor:pointer}nav button,.audio button,.paper-button{font:500 17px 'Cormorant Garamond',serif;color:#ffe7b7;background:#172b4a;border:1px solid #c9a15e;border-radius:25px;padding:8px 18px}nav button:disabled{opacity:.4;cursor:default}#counter{min-width:95px;text-align:center}.help{text-align:center;font-size:14px;margin:10px 0}.audio{position:fixed;bottom:14px;left:14px;display:flex;gap:8px;z-index:120}.audio button{font-size:15px}.paper-button{font-size:clamp(11px,1.3vw,16px);border-radius:5px;padding:6px 12px;margin-top:9px}.palette{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin-top:10px}.swatch{width:clamp(20px,3vw,38px);height:clamp(20px,3vw,38px);border-radius:50%;background:var(--c);border:2px solid #fff9ea;box-shadow:0 0 0 1px #92754b}.rsvp{display:grid;gap:4px;max-width:290px;width:100%;text-align:left}.rsvp label{font-size:clamp(11px,1.2vw,15px)}.rsvp input,.rsvp select{width:100%;min-width:0;padding:5px 7px;background:#fff9eb;border:1px solid #a88d63;color:#233852;font:15px Georgia,serif}.rsvp small{font-size:clamp(10px,1vw,12px)}.rsvp .paper-button{width:100%;margin-top:3px}[hidden]{display:none!important}.toast{display:none;position:fixed;bottom:70px;left:50%;transform:translateX(-50%);background:#142847;padding:10px 16px;border-radius:6px;z-index:300}.toast.show{display:block}@media(max-width:750px){header{padding-top:9px}header h1{font-size:23px}header p{font-size:13px}.stage{height:clamp(290px,60vh,530px)}.book{--w:94vw}.pagecontent{padding:9% 5%}.pagecontent:before{inset:5px}.pagecontent h2{font-size:clamp(13px,3vw,23px)}.pagecontent h2.script{font-size:clamp(29px,7vw,48px)}.pagecontent p{font-size:clamp(10px,2.6vw,16px)}.eyebrow{font-size:7px;letter-spacing:.4px}.flower{font-size:17px}.rim{inset:10px;gap:5px;padding:6px}.rim strong{font-size:11vw}.rim span,.rim small{font-size:6px}.rim b{font-size:10px}nav{gap:9px}nav button{font-size:14px;padding:7px 10px}.audio{position:relative;bottom:auto;left:auto;justify-content:center;margin:10px 0}.rsvp input,.rsvp select{font-size:11px;padding:3px}.rsvp label{font-size:10px}.rsvp .paper-button{font-size:10px}.pagecontent:after{font-size:11px}}@media(prefers-reduced-motion:reduce){.cover,.flip,.book{transition-duration:.01ms!important}}
-/* Todos los tonos prohibidos se muestran en una única página */
+
 .palette{max-width:320px;gap:9px;margin:14px auto 0}.swatch{width:clamp(19px,2.7vw,34px);height:clamp(19px,2.7vw,34px)}
 @media(max-width:750px){.palette{max-width:190px;gap:5px}.swatch{width:clamp(14px,3vw,24px);height:clamp(14px,3vw,24px)}}
 
-/* Confirmación sencilla y elegante */
+
 .rsvp{gap:7px;max-width:320px;margin-top:10px}.rsvp label{font-weight:600;color:#263c5a}.rsvp input{border-radius:3px;min-height:34px}.companion-toggle{display:flex;align-items:center;gap:7px;width:100%;background:transparent;border:1px dashed #a88d63;color:#263c5a;padding:8px 9px;text-align:left;font:600 clamp(12px,1.25vw,16px) 'Cormorant Garamond',serif;border-radius:5px}.companion-toggle:hover{background:#e7d5b74d}.companion-toggle .plus{font:20px Georgia,serif}.rsvp-message{display:block;min-height:1.2em;text-align:center;color:#674a2d}.rsvp .paper-button{min-height:36px}@media(max-width:750px){.rsvp{gap:3px;margin-top:4px}.rsvp input{min-height:24px}.companion-toggle{font-size:10px;padding:3px 5px}.companion-toggle .plus{font-size:14px}.rsvp .paper-button{min-height:25px}}
+
+
+@media (max-width: 750px) {
+
+  /* Encabezado */
+  header {
+    padding: 12px 6px 0;
+  }
+
+  header span {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  header h1 {
+    font-size: clamp(17px, 4.5vw, 25px);
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  /* Espacio para el libro */
+  .stage {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 45px 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  /* LIBRO: ancho completo y mucha más altura */
+  .book {
+    --w: 96vw;
+    width: var(--w);
+    height: clamp(440px, 135vw, 650px);
+    flex-shrink: 0;
+  }
+
+  /* Páginas interiores */
+  .paper {
+    overflow: hidden;
+  }
+
+  .pagecontent {
+    height: 100%;
+    padding: 22px 8px 24px;
+    justify-content: center;
+    gap: 3px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .pagecontent::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Marco decorativo */
+  .pagecontent::before {
+    inset: 6px;
+  }
+
+  .pagecontent::after {
+    bottom: 5px;
+    font-size: 11px;
+  }
+
+  /* Títulos pequeños superiores */
+  .eyebrow {
+    font-size: clamp(7px, 1.8vw, 10px);
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .flower {
+    font-size: 19px;
+    line-height: 1;
+  }
+
+  /* Títulos principales */
+  .pagecontent h2 {
+    font-size: clamp(14px, 3.5vw, 21px);
+    line-height: 1.15;
+    margin: 5px 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .pagecontent h2.script {
+    font-size: clamp(30px, 7vw, 48px);
+    line-height: 1.15;
+  }
+
+  /* Textos */
+  .pagecontent p {
+    font-size: clamp(12px, 2.85vw, 16px);
+    line-height: 1.3;
+    margin: 5px 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .date {
+    font-size: clamp(11px, 2.8vw, 16px);
+  }
+
+  /* Botón de Waze y otros botones */
+  .paper-button {
+    font-size: clamp(11px, 2.8vw, 15px);
+    padding: 7px 8px;
+    margin-top: 8px;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  /* Colores prohibidos */
+  .palette {
+    width: 100%;
+    max-width: 180px;
+    gap: 7px;
+    margin: 10px auto 0;
+    flex-wrap: wrap;
+  }
+
+  .swatch {
+    width: clamp(17px, 4vw, 24px);
+    height: clamp(17px, 4vw, 24px);
+    flex-shrink: 0;
+  }
+
+  /* Formulario de confirmación */
+  .rsvp {
+    width: 100%;
+    max-width: 100%;
+    gap: 5px;
+    margin-top: 6px;
+  }
+
+  .rsvp label {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .rsvp input {
+    min-height: 32px;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .companion-toggle {
+    font-size: 11px;
+    padding: 6px;
+    line-height: 1.2;
+  }
+
+  .rsvp .paper-button {
+    min-height: 32px;
+    font-size: 11px;
+  }
+
+  .rsvp small {
+    font-size: 10px;
+  }
+
+  /* Portada */
+  .rim {
+    inset: 9px;
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .rim strong {
+    font-size: clamp(34px, 9vw, 55px);
+  }
+
+  /* Controles inferiores */
+  nav {
+    width: 100%;
+    gap: 8px;
+    padding: 0 8px;
+  }
+
+  nav button {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+
+  #counter {
+    min-width: 45px;
+  }
+
+  .help {
+    font-size: 13px;
+    padding: 0 12px;
+    line-height: 1.4;
+  }
+
+  .audio {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 8px 25px;
+  }
+
+  .audio button {
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+}
+
+/* Ajuste adicional para celulares muy estrechos */
+@media (max-width: 380px) {
+  .book {
+    --w: 98vw;
+    height: 510px;
+  }
+
+  .pagecontent {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .pagecontent p {
+    font-size: 11px;
+  }
+
+  .pagecontent h2 {
+    font-size: 13px;
+  }
+
+  .eyebrow {
+    font-size: 7px;
+  }
+}

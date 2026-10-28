@@ -7,9 +7,14 @@
 .rsvp{gap:7px;max-width:320px;margin-top:10px}.rsvp label{font-weight:600;color:#263c5a}.rsvp input{border-radius:3px;min-height:34px}.companion-toggle{display:flex;align-items:center;gap:7px;width:100%;background:transparent;border:1px dashed #a88d63;color:#263c5a;padding:8px 9px;text-align:left;font:600 clamp(12px,1.25vw,16px) 'Cormorant Garamond',serif;border-radius:5px}.companion-toggle:hover{background:#e7d5b74d}.companion-toggle .plus{font:20px Georgia,serif}.rsvp-message{display:block;min-height:1.2em;text-align:center;color:#674a2d}.rsvp .paper-button{min-height:36px}@media(max-width:750px){.rsvp{gap:3px;margin-top:4px}.rsvp input{min-height:24px}.companion-toggle{font-size:10px;padding:3px 5px}.companion-toggle .plus{font-size:14px}.rsvp .paper-button{min-height:25px}}
 
 
+
+/* ==========================================
+   VICTORIA XV - DISEÑO PARA CELULARES
+   DOS PÁGINAS VISIBLES
+========================================== */
+
 @media (max-width: 750px) {
 
-  /* Encabezado */
   header {
     padding: 12px 6px 0;
   }
@@ -27,26 +32,24 @@
     font-size: 14px;
   }
 
-  /* Espacio para el libro */
   .stage {
     width: 100%;
     height: auto;
     min-height: 0;
-    padding: 20px 0 20px;
+    padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: visible;
   }
 
-  /* LIBRO: ancho completo y mucha más altura */
-.book {
-  --w: 96vw;
-  width: var(--w);
-  height: clamp(340px, 92vw, 460px);
-  flex-shrink: 0;
-}
-  /* Páginas interiores */
+  .book {
+    --w: 96vw;
+    width: var(--w);
+    height: clamp(340px, 92vw, 460px);
+    flex-shrink: 0;
+  }
+
   .paper {
     overflow: hidden;
   }
@@ -65,7 +68,6 @@
     display: none;
   }
 
-  /* Marco decorativo */
   .pagecontent::before {
     inset: 6px;
   }
@@ -75,11 +77,10 @@
     font-size: 11px;
   }
 
-  /* Títulos pequeños superiores */
   .eyebrow {
     font-size: clamp(7px, 1.8vw, 10px);
     line-height: 1.3;
-    letter-spacing: 0.2px;
+    letter-spacing: .2px;
     max-width: 100%;
     overflow-wrap: anywhere;
   }
@@ -89,7 +90,6 @@
     line-height: 1;
   }
 
-  /* Títulos principales */
   .pagecontent h2 {
     font-size: clamp(14px, 3.5vw, 21px);
     line-height: 1.15;
@@ -103,7 +103,6 @@
     line-height: 1.15;
   }
 
-  /* Textos */
   .pagecontent p {
     font-size: clamp(12px, 2.85vw, 16px);
     line-height: 1.3;
@@ -116,7 +115,6 @@
     font-size: clamp(11px, 2.8vw, 16px);
   }
 
-  /* Botón de Waze y otros botones */
   .paper-button {
     font-size: clamp(11px, 2.8vw, 15px);
     padding: 7px 8px;
@@ -125,7 +123,6 @@
     white-space: normal;
   }
 
-  /* Colores prohibidos */
   .palette {
     width: 100%;
     max-width: 180px;
@@ -140,7 +137,6 @@
     flex-shrink: 0;
   }
 
-  /* Formulario de confirmación */
   .rsvp {
     width: 100%;
     max-width: 100%;
@@ -174,7 +170,6 @@
     font-size: 10px;
   }
 
-  /* Portada */
   .rim {
     inset: 9px;
     padding: 6px;
@@ -185,7 +180,6 @@
     font-size: clamp(34px, 9vw, 55px);
   }
 
-  /* Controles inferiores */
   nav {
     width: 100%;
     gap: 8px;
@@ -224,8 +218,10 @@
   }
 }
 
-/* Ajuste adicional para celulares muy estrechos */
+/* CELULARES PEQUEÑOS */
+
 @media (max-width: 380px) {
+
   .book {
     --w: 98vw;
     height: 360px;
@@ -246,5 +242,194 @@
 
   .eyebrow {
     font-size: 7px;
+  }
+}
+
+/* ==========================================
+   NUEVO LIBRO CELESTE Y DORADO
+   ESTILO BRIDGERTON
+========================================== */
+
+/* Colores principales */
+
+.book {
+  --azul-claro: #b9cede;
+  --azul-medio: #92aec5;
+  --azul-oscuro: #6889a5;
+  --dorado: #caa76b;
+  --dorado-claro: #e7cf99;
+}
+
+/* Estructura exterior */
+
+.binding {
+  border: 3px solid #d3b477;
+
+  background: linear-gradient(
+    90deg,
+    #809eb7 0%,
+    #b9cede 20%,
+    #d0dfeb 45%,
+    #708da6 50%,
+    #d0dfeb 55%,
+    #b9cede 80%,
+    #809eb7 100%
+  );
+
+  box-shadow:
+    0 7px 0 #6c8aa4,
+    0 11px 0 #b99559,
+    0 16px 20px #100c1780,
+    inset 0 0 0 7px #a6c0d3,
+    inset 0 0 0 9px #dfc18a;
+}
+
+/* Portada azul celeste */
+
+.coverfront {
+  border: 3px solid #d8b77a;
+  border-radius: 3px 13px 13px 3px;
+
+  background: radial-gradient(
+    ellipse at 35% 25%,
+    #d9e6ef 0%,
+    #b9cede 43%,
+    #91aec5 80%,
+    #799ab5 100%
+  );
+
+  box-shadow:
+    inset 0 0 0 5px #9cb8cd,
+    inset 0 0 0 8px #d6b579,
+    inset 0 0 0 12px #c3d7e5,
+    4px 6px 14px #100b1855;
+}
+
+/* Interior de la portada */
+
+.coverback {
+  border: 3px solid #d3b477;
+
+  background: linear-gradient(
+    120deg,
+    #829eb6,
+    #c8dbe8 45%,
+    #a0bbcf 100%
+  );
+}
+
+/* Marco ornamental */
+
+.rim {
+  border: double 6px #c9a15d;
+
+  box-shadow:
+    inset 0 0 0 7px #bad0df,
+    inset 0 0 0 9px #d4b477;
+
+  color: #82612e;
+  text-shadow: 0 1px 1px #fff6dd88;
+}
+
+/* Letras de la portada */
+
+.rim strong {
+  color: #99733b;
+
+  text-shadow:
+    1px 1px 0 #f5e5bd,
+    0 2px 5px #ffffff55;
+}
+
+.rim span,
+.rim b,
+.rim small {
+  color: #75552e;
+}
+
+.rim > div {
+  color: #b38b4e;
+}
+
+/* Lomo dorado */
+
+.spine {
+  background: linear-gradient(
+    90deg,
+    #587895,
+    #a8c2d5 25%,
+    #e1c48a 48%,
+    #b18b50 55%,
+    #7899b3
+  );
+
+  box-shadow: 0 0 5px #25394b55;
+}
+
+/* Páginas color marfil */
+
+.paper,
+.flipfront,
+.flipback {
+  background: radial-gradient(
+    ellipse at 55% 25%,
+    #fffdf3 0%,
+    #f9edda 60%,
+    #ead7b8 100%
+  );
+
+  border-color: #c7a46b;
+}
+
+/* Adornos interiores */
+
+.pagecontent::before {
+  border-color: #caa86c;
+}
+
+.pagecontent::after,
+.flower {
+  color: #b38b4e;
+}
+
+.eyebrow {
+  color: #987443;
+}
+
+.pagecontent h2 {
+  color: #344d64;
+}
+
+.pagecontent h2.script {
+  color: #8c6a91;
+}
+
+/* Botones */
+
+nav button,
+.audio button,
+.paper-button {
+  background: linear-gradient(
+    135deg,
+    #6689a7,
+    #476c8d
+  );
+
+  color: #fff4db;
+  border: 1px solid #d3b477;
+  box-shadow: 0 2px 5px #14243a33;
+}
+
+/* Detalles de portada en celulares */
+
+@media (max-width: 750px) {
+
+  .rim {
+    border-width: 3px;
+  }
+
+  .coverfront,
+  .coverback {
+    border-width: 2px;
   }
 }

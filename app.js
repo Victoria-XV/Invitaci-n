@@ -222,7 +222,7 @@ voice.addEventListener('error', () => {
 });
 
 updateVoiceButton();
-```
+
 // El primer clic/tap puede habilitar la música incluso si no fue en «Abrir libro».
 document.addEventListener('pointerdown',()=>{startMusic()}, {once:true,capture:true});
 document.addEventListener('keydown',()=>{startMusic()}, {once:true,capture:true});

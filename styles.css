@@ -433,3 +433,58 @@ nav button,
     border-width: 2px;
   }
 }
+
+/* SOBRE ELEGANTE PARA EL REGALO */
+
+.sobre-regalo {
+  position: relative;
+  width: min(85%, 270px);
+  height: 150px;
+  margin: 24px auto 8px;
+  filter: drop-shadow(0 8px 12px rgba(65, 46, 24, 0.25));
+}
+
+.sobre-cuerpo {
+  position: absolute;
+  inset: 0;
+  background: #ead7b3;
+  border: 2px solid #b89253;
+  border-radius: 6px;
+  clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 100%, 0 100%);
+}
+
+.sobre-solapa {
+  position: absolute;
+  inset: 0;
+  background: #f7edd8;
+  border: 2px solid #b89253;
+  border-radius: 6px;
+  clip-path: polygon(0 0, 100% 0, 50% 65%);
+}
+
+.sobre-sello {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #d8b878, #a47b3d);
+  border: 2px solid #f5e4b7;
+  display: grid;
+  place-items: center;
+  color: #fff8e8;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  box-shadow: 0 2px 5px #72552f55;
+  z-index: 3;
+}
+
+@media (max-width: 600px) {
+  .sobre-regalo {
+    width: min(80%, 190px);
+    height: 110px;
+    margin: 12px auto 5px;
+  }
+}

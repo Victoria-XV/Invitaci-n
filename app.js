@@ -31,7 +31,16 @@ function page(i){
  if(i>=pages.length)return '<div class="eyebrow">FIN DE ESTE CAPÍTULO</div><h2>Hasta pronto</h2><p>Será un honor compartir este día contigo.</p>';
  const [k,t,b]=pages[i];
  let ext='';
-
+ 
+if(i===6){
+ ext=`
+ <div class="sobre-regalo">
+   <div class="sobre-solapa"></div>
+   <div class="sobre-cuerpo"></div>
+   <div class="sobre-sello">V</div>
+ </div>`;
+}
+ 
  if(i===4)ext='<button class="paper-button" type="button" id="wazeButton">Abrir Waze ↗</button>';
 
  if(i===5)ext='<div class="palette">'+palettes.flat().map(c=>`<span class="swatch" style="--c:${c}" title="${c}"></span>`).join('')+'</div>';
